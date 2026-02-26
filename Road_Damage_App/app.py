@@ -13,6 +13,9 @@ st.title("🚧 Road Damage Detection System")
 
 uploaded_file = st.file_uploader("Upload a road image", type=["jpg", "png", "jpeg"])
 
+confidence = np.max(prediction) * 100
+st.write(f"Confidence: {confidence:.2f}%")
+
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
     st.image(image, caption="Uploaded Image", use_column_width=True)
@@ -35,4 +38,5 @@ if uploaded_file is not None:
         st.warning("Recommended Action: Monitor and schedule maintenance.")
     else:
         st.warning("Recommended Action: Inspect drainage area.")
+
 
