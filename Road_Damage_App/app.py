@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 
 # Load model
-model = tf.keras.models.load_model("road_damage_model_final.keras")
+model = tf.keras.models.load_model("Road_Damage_App/road_damage_model_final.keras")
 
 # Class labels (CHANGE if your order is different)
 class_names = ['pothole', 'crack', 'manhole']
@@ -35,3 +35,4 @@ if uploaded_file is not None:
         st.warning("Recommended Action: Monitor and schedule maintenance.")
     else:
         st.warning("Recommended Action: Inspect drainage area.")
+
